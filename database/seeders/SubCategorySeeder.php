@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Database\Seeder;
 
 class SubCategorySeeder extends Seeder
@@ -13,6 +15,9 @@ class SubCategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        SubCategory::factory(['name'=>'Dell'])->create();
+        SubCategory::factory(['name'=>'Apple'])->create();
+        SubCategory::factory(['name'=>'Microsoft'])->create();
+        SubCategory::factory(['name'=>'NEC'])->create();
     }
 }

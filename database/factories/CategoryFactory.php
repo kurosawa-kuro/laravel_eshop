@@ -15,7 +15,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'description' => $this->faker->sentences(),
+            'description' => $this->faker->paragraph(),
             'image' => 'https://i.pravatar.cc/300',
         ];
     }

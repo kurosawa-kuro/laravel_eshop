@@ -14,8 +14,7 @@ class SubCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'id' => rand(1,20),
-            'category_id' => rand(1,4),
+            'category_id' => rand(1,3),
             'name' => $this->faker->name(),
         ];
     }

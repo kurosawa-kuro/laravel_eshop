@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -13,6 +14,9 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        Category::factory(['name'=>'PC'])->create();
+        Category::factory(['name'=>'Camera'])->create();
+        Category::factory(['name'=>'Smart Phone'])->create();
+        Category::factory(20)->create();
     }
 }

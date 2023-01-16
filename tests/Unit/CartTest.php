@@ -1,10 +1,12 @@
 <?php
 
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\User;
+use Database\Seeders\CartSeeder;
 use Database\Seeders\CategorySeeder;
 use Database\Seeders\ProductSeeder;
 use Database\Seeders\SubCategorySeeder;
@@ -13,9 +15,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
-class ProductTest extends TestCase
+class CartTest extends TestCase
 {
-//    use RefreshDatabase;
+    use RefreshDatabase;
 
     /**
      * A basic test example.
@@ -30,7 +32,14 @@ class ProductTest extends TestCase
         $subCategory = SubCategory::with('category')->get();
 //        dd($subCategory->toArray());
         $this->seed(ProductSeeder::class);
-        dd(Product::with('category','subCategory')->get()->toArray());
+//        dd(Product::with('category','subCategory')->get()->toArray());
+
+        $this->seed(CartSeeder::class);
+        $cart = Cart::get()->toArray();
+//        $cart->product_json
+
+        dd(json_encode($cart[0]['product_json']));
+
 //        dd(SubCategory::create([
 //            'id' => 1,
 //            'category_id' => 1,

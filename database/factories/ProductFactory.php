@@ -13,8 +13,17 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+//        $table->integer('category_id');
+//        $table->integer('subcategory_id')->nullable();
+//        $table->string('name');
+//        $table->string('image');
+//        $table->integer('price');
         return [
-            //
+            'category_id' => 1,
+            'subcategory_id' => 1,
+            'name' => $this->faker->name(),
+            'image' => 'dummy',
+            'price' => 1,
         ];
     }
 }

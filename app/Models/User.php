@@ -40,7 +40,6 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
- * @property-read \App\Models\Profile|null $profile
  */
 class User extends Authenticatable
 {
@@ -78,10 +77,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    Public function profile(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(Profile::class);
-    }
 
     /**
      * @throws Exception
